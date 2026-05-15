@@ -3,7 +3,8 @@ import time
 
 
 def explode():
-    st.audio(audio_bytes,
+    audio_placeholder.audio(
+        audio_bytes,
         format="audio/mp3",
         autoplay=True)
 
@@ -13,6 +14,7 @@ four  = st.checkbox("4人")
 five  = st.checkbox("5人")
 
 placeholder = st.empty()
+audio_placeholder = st.empty()
 
 audio_file = open("爆発.mp3", "rb")
 audio_bytes = audio_file.read()
