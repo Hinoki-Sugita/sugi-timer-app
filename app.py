@@ -20,3 +20,5 @@ for remaining in range(20, -1, -1):
 
     if remaining == 10:
         st.write("10秒")
+    if remaining == 5:
+        st.write("5秒")
