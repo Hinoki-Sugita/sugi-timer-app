@@ -8,7 +8,7 @@ five  = st.checkbox("5人")
 
 placeholder = st.empty()
 
-for remaining in range(20, -1, -1):
+for remaining in range(1200, -1, -1):
     minutes = remaining // 60
     seconds = remaining % 60
 
@@ -16,9 +16,29 @@ for remaining in range(20, -1, -1):
         placeholder.write("終了")
     else:
         placeholder.write(f"{minutes:02}:{seconds:02}")
-    time.sleep(1)
+    time.sleep(0.2)
 
-    if remaining == 10:
-        st.write("10秒")
-    if remaining == 5:
-        st.write("5秒")
+    if two:
+        if remaining == 600:
+            print("2人のとこ、1回目")
+    if three:
+        if remaining == 800:
+            print("3人のとこ、1回目")
+        if remaining == 400:
+            print("3人のとこ、2回目")
+    if four:
+        if remaining == 900:
+            print("4人のとこ、1回目")
+        if remaining == 600:
+            print("4人のとこ、2回目")
+        if remaining == 300:
+            print("4人のとこ、3回目")
+    if five:
+        if remaining == 960:
+            print("5人のとこ、1回目")
+        if remaining == 720:
+            print("5人のとこ、2回目")
+        if remaining == 480:
+            print("5人のとこ、3回目")
+        if remaining == 240:
+            print("5人のとこ、4回目")
