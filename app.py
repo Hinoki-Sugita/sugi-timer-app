@@ -20,8 +20,9 @@ three = st.checkbox("3人")
 four  = st.checkbox("4人")
 five  = st.checkbox("5人")
 
+st.button("開始")
+
 placeholder = st.empty()
-#audio_placeholder = st.empty()
 
 audio_file = open("爆発.mp3", "rb")
 audio_bytes = audio_file.read()
