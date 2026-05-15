@@ -1,12 +1,19 @@
 import streamlit as st
 import time
 
+audio_count = 0
 
 def explode():
+    global audio_count
+
     audio_placeholder.audio(
         audio_bytes,
         format="audio/mp3",
-        autoplay=True)
+        autoplay=True,
+        key=f"audio_{audio_count}"
+    )
+
+    audio_count += 1
 
 two   = st.checkbox("2人")
 three = st.checkbox("3人")
