@@ -1,19 +1,15 @@
 import streamlit as st
 import time
 
-audio_count = 0
-
 def explode():
-    global audio_count
+
+    audio_placeholder = st.empty()
 
     audio_placeholder.audio(
         audio_bytes,
         format="audio/mp3",
-        autoplay=True,
-        key=f"audio_{audio_count}"
+        autoplay=True
     )
-
-    audio_count += 1
 
 two   = st.checkbox("2人")
 three = st.checkbox("3人")
@@ -21,12 +17,12 @@ four  = st.checkbox("4人")
 five  = st.checkbox("5人")
 
 placeholder = st.empty()
-audio_placeholder = st.empty()
+#audio_placeholder = st.empty()
 
 audio_file = open("爆発.mp3", "rb")
 audio_bytes = audio_file.read()
 
-for remaining in range(1200, -1, -1):
+for remaining in range(1000, -1, -1):
     minutes = remaining // 60
     seconds = remaining % 60
 
