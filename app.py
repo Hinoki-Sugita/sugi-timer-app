@@ -16,7 +16,6 @@ for remaining in range(1200, -1, -1):
         placeholder.write("終了")
     else:
         placeholder.write(f"{minutes:02}:{seconds:02}")
-    time.sleep(0.2)
 
     if two:
         if remaining == 600:
@@ -42,3 +41,5 @@ for remaining in range(1200, -1, -1):
             print("5人のとこ、3回目")
         if remaining == 240:
             print("5人のとこ、4回目")
+
+    time.sleep(0.12)
