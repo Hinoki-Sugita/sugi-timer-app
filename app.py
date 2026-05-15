@@ -1,14 +1,18 @@
 import streamlit as st
 import time
+import base64
 
 def explode():
 
-    audio_placeholder = st.empty()
+    b64 = base64.b64encode(audio_bytes).decode()
 
-    audio_placeholder.audio(
-        audio_bytes,
-        format="audio/mp3",
-        autoplay=True
+    st.markdown(
+        f"""
+        <audio autoplay>
+        <source src="data:audio/mp3;base64,{b64}" type="audio/mp3">
+        </audio>
+        """,
+        unsafe_allow_html=True
     )
 
 two   = st.checkbox("2人")
