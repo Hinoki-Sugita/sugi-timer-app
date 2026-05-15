@@ -1,12 +1,21 @@
 import streamlit as st
 import time
 
+
+def explode():
+    st.audio(audio_bytes,
+        format="audio/mp3",
+        autoplay=True)
+
 two   = st.checkbox("2人")
 three = st.checkbox("3人")
 four  = st.checkbox("4人")
 five  = st.checkbox("5人")
 
 placeholder = st.empty()
+
+audio_file = open("爆発.mp3", "rb")
+audio_bytes = audio_file.read()
 
 for remaining in range(1200, -1, -1):
     minutes = remaining // 60
@@ -19,27 +28,17 @@ for remaining in range(1200, -1, -1):
 
     if two:
         if remaining == 600:
-            st.write("2人のとこ、1回目")
+            st.write("2人のとこ") ; explode()
     if three:
-        if remaining == 800:
-            st.write("3人のとこ、1回目")
-        if remaining == 400:
-            st.write("3人のとこ、2回目")
+        if remaining in [800,400]:
+            st.write("3人のとこ") ; explode()
     if four:
-        if remaining == 900:
-            st.write("4人のとこ、1回目")
+        if remaining in [900,300]:
+            st.write("4人のとこ") ; explode()
         if remaining == 600 and not two:
-            st.write("4人のとこ、2回目")
-        if remaining == 300:
-            st.write("4人のとこ、3回目")
+            st.write("4人のとこ") ; explode()
     if five:
-        if remaining == 960:
-            st.write("5人のとこ、1回目")
-        if remaining == 720:
-            st.write("5人のとこ、2回目")
-        if remaining == 480:
-            st.write("5人のとこ、3回目")
-        if remaining == 240:
-            st.write("5人のとこ、4回目")
+        if remaining in [960,720,480,240]:
+            st.write("5人のとこ") ; explode()
 
     time.sleep(0.1)
