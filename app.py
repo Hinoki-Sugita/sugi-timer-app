@@ -1,7 +1,7 @@
 import streamlit as st
 import time
 
-two   = st.checkbox("2人")
+#two   = st.checkbox("2人")
 three = st.checkbox("3人")
 four  = st.checkbox("4人")
 five  = st.checkbox("5人")
@@ -17,9 +17,9 @@ for remaining in range(1200, -1, -1):
     else:
         placeholder.write(f"{minutes:02}:{seconds:02}")
 
-    if two:
-        if remaining == 600:
-            print("2人のとこ、1回目")
+    #if two:
+   #     if remaining == 600:
+   #         print("2人のとこ、1回目")
     if three:
         if remaining == 800:
             print("3人のとこ、1回目")
